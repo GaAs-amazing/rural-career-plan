@@ -1195,3 +1195,9 @@ a:focus-visible, button:focus-visible{
   .flow-item{border-right:none; border-bottom:1px solid rgba(211,177,119,.13); padding:26px 0}
   .flow-item:last-child{border-bottom:none}
 }
+/* 移动端：首页透明导航展开后的下拉面板是浅色底，链接必须回到深色 */
+@media (max-width:860px){
+  .js .topbar--over .nav a{color:var(--ink-soft)}
+  .js .topbar--over .nav a:hover{color:var(--forest); background:rgba(14,59,44,.05)}
+  .js .topbar--over .nav a[aria-current="page"]{color:var(--forest)}
+}
