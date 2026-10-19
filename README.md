@@ -44,30 +44,18 @@ python -m http.server 8080
 
 ## 部署到 GitHub Pages
 
-本站**独立于**康养规划站（那个站在 `kangyang-site` 仓库里，地址是 `/kangyang-site/`），本站部署在用户主页仓库 `GaAs-amazing.github.io`。
+- 仓库：`GaAs-amazing/rural-career-plan`（沿用已有仓库，不新建）
+- 访问地址：**https://gaas-amazing.github.io/rural-career-plan/**
 
-- 访问地址：**https://gaas-amazing.github.io/**
-- 仓库：`GaAs-amazing/GaAs-amazing.github.io`
-
-首次部署：
-
-1. 在 GitHub 新建空仓库 `GaAs-amazing.github.io`（不要勾 README / .gitignore / license）
-2. 回到上一级目录执行：
+这个仓库原来放的是旧的康养单页，现在整站替换成这个个人网站，所以第一次推送要加 `-Replace` 强制覆盖：
 
 ```powershell
-.\deploy-github-pages.ps1 -User GaAs-amazing
+.\deploy-github-pages.ps1 -User GaAs-amazing -Replace
 ```
 
-3. 仓库 → Settings → Pages → Source 选 `Deploy from a branch`，Branch 选 `main`、目录 `/ (root)`
-4. 等 1—2 分钟，访问 `https://gaas-amazing.github.io/`
+之后每次更新：改完文件跑同一条命令即可（会自动提交并推送）。
 
-之后每次更新：改完文件再跑一次同一条命令即可（会自动提交并推送）。
-
-如果不想占用用户主页仓库，也可以建成普通项目仓库，地址会变成 `/<仓库名>/`：
-
-```powershell
-.\deploy-github-pages.ps1 -User GaAs-amazing -Repo personal-site
-```
+> 康养规划站是另一个仓库 `kangyang-site`，地址 `https://gaas-amazing.github.io/kangyang-site/`，两者互不影响。
 
 ## 维护
 
